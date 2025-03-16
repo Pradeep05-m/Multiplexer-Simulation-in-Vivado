@@ -152,8 +152,7 @@ module mux4_to_1_structural (
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-15 094014](https://github.com/user-attachments/assets/02bb66b6-4eaa-4ac1-b058-010853bcaca1)
-
+![Screenshot 2025-03-16 125754](https://github.com/user-attachments/assets/1729e6f3-7b65-456f-b425-6a1fe7f71a0b)
 ### Testbench Implementation
 ```verilog
 `timescale 1ns / 1ps
