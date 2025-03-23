@@ -152,7 +152,7 @@ module mux4_to_1_structural (
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-23 080647](https://github.com/user-attachments/assets/ed82b23e-4aae-4711-b6bf-939a41eda6aa)
+![Screenshot 2025-03-23 082734](https://github.com/user-attachments/assets/5990bd1c-a5b4-425d-a1f6-df28a3ce964b)
 
 ### Testbench Implementation
 ```verilog
