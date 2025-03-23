@@ -63,22 +63,22 @@ To design and simulate a 4:1 Multiplexer (MUX) using Verilog HDL in four differe
 
 ### 4:1 MUX Gate-Level Implementation
 ```verilog
-module mux_24gl(s,a,b,c,d,y);
-input [1:0]s;
-input a,b,c,d;
-output y;
-wire [5:0]w;
-not g1(w[0],s[0]);
-not g2(w[1],s[1]);
-and g3(w[2],w[0],w[1],a);
-and g4(w[3],w[0],s[1],b);
-and g5(w[4],s[0],w[1],c);
-and g6(w[5],s[0],s[1],d);
-or o1(y,w[2],w[3],w[4],w[5]);
+module mux_24gl (s0,s1,a,b,c,d,Y);
+input s0,s1,a,b,c,d;
+output Y;
+wire w1,w2,w3,w4,w5,w6;
+not g1(w1,s1);
+not g2(w2,s0);
+and g3(w3,w1,w2,a);
+and g4(w4,w1,s0,b);
+and g3(w5,s1,w2,c);
+and g3(w6,s1,s0,d);
+or g7(Y,w3,w4,w5,w6);
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-15 082434](https://github.com/user-attachments/assets/621785b2-c08e-4a96-9642-bad8218d5739)
+![Screenshot 2025-03-23 072948](https://github.com/user-attachments/assets/eea175ec-4ad7-4510-ac11-72ebea8c7f3d)
+
 
 ### 4:1 MUX Data Flow Implementation
 ```verilog
@@ -95,7 +95,7 @@ assign y=w[0]|w[1]|w[2]|w[3];
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-15 085853](https://github.com/user-attachments/assets/ac93fa22-3b73-4845-9960-df010843d3e6)
+![Screenshot 2025-03-23 073647](https://github.com/user-attachments/assets/bbf95540-60ca-4607-947b-331c727b8305)
 
 ### 4:1 MUX Behavioral Implementation
 ```verilog
@@ -117,7 +117,7 @@ end
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-15 092626](https://github.com/user-attachments/assets/bc976b7a-dc0c-440e-9ab9-618d44288908)
+![Screenshot 2025-03-23 074035](https://github.com/user-attachments/assets/5bcece71-52cc-4576-a9e2-631207d667ee)
 
 ### 4:1 MUX Structural Implementation
 
@@ -152,7 +152,8 @@ module mux4_to_1_structural (
 endmodule
 ```
 ### Output:
-![Screenshot 2025-03-16 125754](https://github.com/user-attachments/assets/1729e6f3-7b65-456f-b425-6a1fe7f71a0b)
+![Screenshot 2025-03-23 080647](https://github.com/user-attachments/assets/ed82b23e-4aae-4711-b6bf-939a41eda6aa)
+
 ### Testbench Implementation
 ```verilog
 `timescale 1ns / 1ps
